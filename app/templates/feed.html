@@ -1,8 +1,18 @@
 <div ng-controller="FeedController">
 
+
   <ul>
     <li ng-repeat="post in feed">
-      <img ng-src="{{post.images.standard_resolution.url}}" />
+      <img class="ig-image" ng-src="{{post.images.standard_resolution.url}}" />
+
+      <ui-gmap-google-map center="post.location" zoom="map.zoom">
+        <ui-gmap-marker
+          idKey="post.id"
+          coords="post.location"
+        >
+      </ui-gmap-marker>
+      </ui-gmap-google-map>
+
     </li>
   </ul>
 

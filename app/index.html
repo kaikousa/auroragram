@@ -9,6 +9,21 @@
 <!--
     <link rel="stylesheet" href="css/screen.css">
 -->
+  <style type="text/css">
+  ul{
+    list-style-type: none;
+  }
+
+  .angular-google-map-container {
+    height: 640px;
+    width: 640px;
+    float: right;
+  }
+
+  .ig-image{
+    float: left;
+  }
+  </style>
 
   </head>
   <body>
@@ -18,10 +33,17 @@
 
     <div ui-view></div>
 
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+
+    <script src='assets/js/vendor/jquery.min.js'></script>
+    <script src='assets/js/vendor/lodash.js'></script>
+    <script src='assets/js/vendor/bluebird.js'></script>
+
     <script src="assets/js/vendor/angular.js"></script>
     <script src="assets/js/vendor/angular-resource.js"></script>
     <script src="assets/js/vendor/angular-ui-router.js"></script>
     <script src="assets/js/vendor/angular-relative-date.js"></script>
+    <script src='assets/js/vendor/angular-google-maps.js'></script>
     <script src="assets/js/app.js"></script>
 
   </body>

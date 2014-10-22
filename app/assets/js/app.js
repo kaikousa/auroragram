@@ -1,6 +1,6 @@
 var API_URL = "http://" + window.location.hostname + "/api/v1";
 
-var app = angular.module('auroragram',['ui.router', 'ngResource', 'relativeDate']);
+var app = angular.module('auroragram',['ui.router', 'ngResource', 'relativeDate', 'google-maps'.ns()]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -21,6 +21,14 @@ app.run(function($rootScope, $templateCache, $http, $state) {
   $rootScope.$on('$viewContentLoaded', function() {
     $templateCache.removeAll();
   });
+
+  $rootScope.map = {
+    center: {
+        latitude: 45,
+        longitude: -73
+    },
+    zoom: 8
+  };
 
 });
 

@@ -16,13 +16,12 @@ class Auroragram::Controllers::FeedController < Auroragram::Controllers::JsonBas
 
     json_data['data'].each do |post|
       if post['location'] != nil
-        puts post['link']
-        puts "\t#{post['location']}"
-        puts "#{post['location']['latitude']}, #{post['location']['longitude']}"
 
         posts << {
+          :id => post['id'],
           :link => post['link'],
           :gmapsLocation => "#{post['location']['latitude']}, #{post['location']['longitude']}",
+          :location => post['location'],
           :images => post['images']
         }
       end
