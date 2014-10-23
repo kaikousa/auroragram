@@ -1,6 +1,15 @@
 auroragram
 ==========
 
+## Components
+
+* Sinatra based API
+* Instagram API integration in realtime
+  * subscribe to certain hashtags (#northernlights, #auroraborealis, #auroragram)
+* [AngularJS + Google Maps](https://angular-ui.github.io/angular-google-maps/#!/)
+
+## Nginx
+
 ```
 upstream lb-aurora-api {
   ip_hash;
