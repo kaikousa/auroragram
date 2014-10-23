@@ -9,6 +9,8 @@ class Post
 
     one :location
 
+    one :user
+
     many :images
 
 end

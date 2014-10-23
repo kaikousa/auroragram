@@ -13,6 +13,7 @@ module Auroragram
     require_relative './models/image'
     require_relative './models/location'
     require_relative './models/post'
+    require_relative './models/user'
 
   end
 

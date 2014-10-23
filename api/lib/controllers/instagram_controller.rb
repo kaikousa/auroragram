@@ -34,15 +34,12 @@ class Auroragram::Controllers::InstagramController < Auroragram::Controllers::Js
 
   # new events are posted here
   post '/api/v1/instagram/?' do
-    p @request_payload
 
     @request_payload.each do |changed_tag|
       puts "checking new media for tag #{changed_tag['object_id']}"
 
       client = Instagram.client(:access_token => ENV['INSTAGRAM_ACCESS_TOKEN'])
       for media_item in client.tag_recent_media(changed_tag['object_id'])
-        puts media_item['id']
-        puts "#{media_item.images.thumbnail.url}"
 
         Auroragram::Services::PostService.create(media_item)
       end

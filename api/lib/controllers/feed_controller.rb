@@ -31,7 +31,10 @@ class Auroragram::Controllers::FeedController < Auroragram::Controllers::JsonBas
       :id => post.ig_id,
       :link => post.link,
       :location => post.location,
-      :images => images
+      :images => images,
+      :user => {
+        :username => post.user.username
+      }
     }
   end
 

@@ -6,32 +6,43 @@
 
     <meta name="apple-mobile-web-app-title" content="Auroragram">
 
-<!--
-    <link rel="stylesheet" href="css/screen.css">
--->
-  <style type="text/css">
-  ul{
-    list-style-type: none;
-  }
+    <link rel="stylesheet" href="assets/css/main.css">
 
-  .angular-google-map-container {
-    height: 640px;
-    width: 640px;
-    float: right;
-  }
+    <style type="text/css">
+    /*ul{
+      list-style-type: none;
+    }
 
-  .ig-image{
-    float: left;
-  }
-  </style>
+    .angular-google-map-container {
+      height: 640px;
+      width: 640px;
+      float: right;
+    }
+
+    .ig-image{
+      float: left;
+    }*/
+    </style>
 
   </head>
   <body>
 
-    <header>
-    </header>
+    <container>
 
-    <div ui-view></div>
+      <div ui-view></div>
+
+      <section id="about">
+
+        <h3 class="title">The best way to know where Northen Lights are glowing right now!</h3>
+        <p class="info">Tag your aurora's pictures with the #auroragram hashtag and help people who are on the track to the lights to know what's goin on around the world.</p>
+
+      </section><!-- /about -->
+
+      <footer>
+
+      </footer>
+
+    </container>
 
     <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 

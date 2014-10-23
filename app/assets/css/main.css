@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300);
 
 html {
-    background: #111215 url("images/background.jpg") top repeat-x;
+    background: #111215 url("../images/background.jpg") top repeat-x;
     -webkit-font-smoothing: antialiased;
     font-family: 'Roboto', Helvetica, Sans-serif;
 }
@@ -39,7 +39,7 @@ body {
 }
 
 .thumbs-area h1 {
-    background: url(images/logo.png) 0 0 no-repeat;
+    background: url(../images/logo.png) 0 0 no-repeat;
     background-size: 100%;
     width: 260px;
     height: 50px;
@@ -185,7 +185,6 @@ html {
 	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-	background: url("images/BackgroundTecido.jpg") repeat;
 }
 article,
 aside,
