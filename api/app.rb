@@ -7,5 +7,6 @@ class App < Sinatra::Application
 
 	# mount controllers (which are actually middleware as well)
 	use Auroragram::Controllers::FeedController
+  use Auroragram::Controllers::InstagramController
 
 end

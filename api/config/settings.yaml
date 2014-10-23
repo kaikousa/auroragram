@@ -1,4 +1,4 @@
 ---
 mongodb:
-  db: distribution-data
-  server: "192.168.33.21"
+  db: auroragram-data
+  server: "localhost"
