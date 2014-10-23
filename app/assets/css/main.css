@@ -1,0 +1,229 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300);
+
+html {
+    background: #111215 url("images/background.jpg") top repeat-x;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Roboto', Helvetica, Sans-serif;
+}
+
+body {
+    color: #94bd8b;
+}
+
+/* — — — SECTIONS — — — */
+
+#aurora-locator {
+    margin: 0 auto;
+    width: 960px;
+    padding-top: 70px;
+}
+
+#about {
+    float:left;
+    background:#161821;
+    margin: 70px auto 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* — — — Aurora Locator — — — */
+
+.thumbs-area {
+    width: 280px;
+    float: left;
+    padding: 10px 0 0 10px;
+    background-color: rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 0 50px rgba(72, 255, 0, 0.1);
+    -moz-box-shadow: 0 0 50px rgba(72, 255, 0, 0.1);
+    box-shadow: 0 0 50px rgba(72, 255, 0, 0.1);
+}
+
+.thumbs-area h1 {
+    background: url(images/logo.png) 0 0 no-repeat;
+    background-size: 100%;
+    width: 260px;
+    height: 50px;
+    display: block;
+    text-indent: -9999px;
+    margin: 0 0 10px 0;
+}
+
+.thumbs-area h2 {
+    display: none;
+}
+
+.thumb {
+    float: left;
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 10px 10px 0;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1);
+    z-index: auto;
+    -webkit-box-shadow: 0 0 50px rgba(72, 255, 0, 0), 0 0 3px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 50px rgba(72, 255, 0, 0), 0 0 3px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 50px rgba(72, 255, 0, 0), 0 0 3px rgba(0, 0, 0, 0);
+}
+
+.thumb img{
+    display: block;
+    width: 80px;
+    height: 80px;
+}
+
+.user {
+    position: relative;
+    top:0;
+    width:80px;
+    padding:0px 3px 3px;
+    background: rgba(0, 0, 0, .65);
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+}
+
+.user a {
+    text-decoration: none;
+    font-size: 5px !important;
+    color: #ddd !important;
+    -webkit-text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+    -moz-text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+    letter-spacing: 1px;
+}
+
+
+.thumb:hover {
+    transform: scale(1.75);
+    -webkit-box-shadow: 0 0 50px rgba(72, 255, 0, 0.3), 0 0 5px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0 0 50px rgba(72, 255, 0, 0.3), 0 0 5px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 50px rgba(72, 255, 0, 0.3), 0 0 5px rgba(0, 0, 0, 1);
+    z-index: 999;
+}
+
+.thumb:hover .user {
+    display: block;
+    opacity: 1;
+    top:-14px;
+}
+
+
+
+.map-area {
+    width: 640px;
+    float: right;
+    padding: 10px 0 8px 10px;
+    background-color: rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 0 50px rgba(72, 255, 0, 0.15);
+    -moz-box-shadow: 0 0 50px rgba(72, 255, 0, 0.15);
+    box-shadow: 0 0 50px rgba(72, 255, 0, 0.15);
+}
+
+
+/* — — — About — — — */
+
+
+.title, .info {
+    display: block;
+    width: 960px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #343a53;
+    padding: 60px 0 10px 0;
+}
+
+.info {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #343a53;
+    padding: 0 0 60px 0;
+}
+
+
+
+/* BOX SIZING
+-------------------------------------------------------------- */
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-size: 100%;
+	font-style: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	background: url("images/BackgroundTecido.jpg") repeat;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a img {
+	border: 0;
+}
