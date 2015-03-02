@@ -14,7 +14,8 @@ body {
 
 #aurora-locator {
     margin: 0 auto;
-    width: 960px;
+    /*width: 960px;*/
+    width: 280px;
     padding-top: 70px;
 }
 
@@ -30,7 +31,7 @@ body {
 
 .thumbs-area {
     width: 280px;
-    float: left;
+    /*float: left;*/
     padding: 10px 0 0 10px;
     background-color: rgba(0, 0, 0, .1);
     -webkit-box-shadow: 0 0 50px rgba(72, 255, 0, 0.1);
