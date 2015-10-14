@@ -14,6 +14,12 @@ class Auroragram::Services::PostService
         location = Location.new(:latitude => media_item.location.latitude, :longitude => media_item.location.longitude)
         post.location = location
 
+        country = Auroragram::Utils::GeocodingClient.get_country(post.location.latitude, post.location.longitude)
+        if country != nil
+          post.country = country['long_name']
+          post.country_code = country['short_name']
+        end
+
         thumbnail = Image.new(
           :type => 'thumbnail',
           :url => media_item.images.thumbnail.url,

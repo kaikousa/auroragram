@@ -12,7 +12,7 @@
                 <a
                   href="{{post.link}}"
                   target="_blank"
-                  title="location-name">
+                  title="{{post.country}}">
                   <img
                     ng-src="{{post.images.low_resolution.url}}"
                     alt="lat-long" />
@@ -23,6 +23,16 @@
         </ul>
 
     </div><!-- /thumbs-area -->
+
+    <div class="trending-countries" ng-controller="TrendingCountriesController">
+        <h2>Trending countries</h2>
+        <ul>
+            <li ng-repeat="country in countries">
+                {{country.country}} ({{country.count}})
+            </li>
+        </li>
+    </div>
+
 <!--
     <div class="map-area">
 

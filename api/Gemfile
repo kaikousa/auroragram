@@ -10,6 +10,7 @@ gem 'uuid', '~> 2.3.7'
 gem 'puma'
 gem 'sinatralive'
 gem 'instagram'
+gem 'rest-client'
 
 # for development
 gem 'rack'

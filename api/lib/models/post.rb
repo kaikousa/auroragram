@@ -9,6 +9,9 @@ class Post
 
     one :location
 
+    key :country, String, :default => ''
+    key :country_code, String, :default => ''
+
     one :user
 
     many :images

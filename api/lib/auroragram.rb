@@ -23,4 +23,10 @@ module Auroragram
 
   end
 
+  module Utils
+
+    require_relative './utils/geocoding_client'
+
+  end
+
 end

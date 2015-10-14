@@ -46,11 +46,35 @@ app.controller('FeedController', function($scope, $state, feedService) {
 
 });
 
+app.controller('TrendingCountriesController', function($scope, $state, countryService) {
+
+  $scope.countries = null;
+
+  countryService.getCountries().success(function(countries) {
+    $scope.countries = countries;
+  });
+
+});
+
+/*
+* SERVICES
+*/
+
 app.factory('feedService', function($http){
   var factory = {};
 
   factory.getFeed = function() {
       return $http.get(API_URL + '/feed');
+  };
+
+  return factory;
+});
+
+app.factory('countryService', function($http){
+  var factory = {};
+
+  factory.getCountries = function() {
+      return $http.get(API_URL + '/feed/countries');
   };
 
   return factory;

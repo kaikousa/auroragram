@@ -14,7 +14,7 @@ class Auroragram::Controllers::FeedController < Auroragram::Controllers::JsonBas
     }
   end
 
-  def format_output(post)
+  def format_images(post)
     images = { :standard_resolution => nil , :low_resolution => nil, :thumbnail => nil }
 
     post.images.each do |image|
@@ -27,12 +27,18 @@ class Auroragram::Controllers::FeedController < Auroragram::Controllers::JsonBas
       end
     end
 
+    images
+  end
+
+  def format_output(post)
     {
       :id => post.id,
       :igId => post.ig_id,
       :link => post.link,
       :location => post.location,
-      :images => images,
+      :country => post.country,
+      :countryCode => post.country_code,
+      :images => format_images(post),
       :user => {
         :username => post.user.username
       }
@@ -40,8 +46,6 @@ class Auroragram::Controllers::FeedController < Auroragram::Controllers::JsonBas
   end
 
   get '/api/v1/feed/?' do
-
-    #posts = Post.all().take(10)
     posts = Post.where(:created_at.gte => 3.days.ago).sort(:created_at.desc)
 
     results = posts.map do |post|
@@ -50,6 +54,31 @@ class Auroragram::Controllers::FeedController < Auroragram::Controllers::JsonBas
 
     results.to_json
 
+  end
+
+  get '/api/v1/feed/countries/?' do
+    posts = Post.where(:created_at.gte => 3.days.ago).sort(:country.desc)
+
+    countries = Hash.new
+
+    posts.each do |post|
+      if countries.include?(post.country)
+        #increment
+        countries[post.country] += 1
+      else
+        #create
+        countries[post.country] = 1
+      end
+    end
+
+    results = []
+    countries.each do |country, count|
+      results << {:country=>country, :count => count}
+    end
+    results.sort! {|a,b| a[:count] <=> b[:count] }
+    results.reverse!
+
+    results.to_json
   end
 
 end
