@@ -1,5 +1,6 @@
 require 'rest-client'
 
+# A tiny client for Google's Geocoding API.
 class Auroragram::Utils::GeocodingClient
 
   def self.get_location(latitude, longitude)

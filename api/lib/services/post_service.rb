@@ -1,7 +1,10 @@
 class Auroragram::Services::PostService
 
   def self.create(media_item)
+    # only handle geotagged posts
     if media_item.location != nil
+
+      # check that the post hasn't yet been handled
       if Post.where(:ig_id => media_item['id']).count == 0
 
 
@@ -11,14 +14,18 @@ class Auroragram::Services::PostService
           :created_at => Time.now.getutc
           )
 
+        # copy and store the location data
         location = Location.new(:latitude => media_item.location.latitude, :longitude => media_item.location.longitude)
         post.location = location
 
+        # get country data from Google's APIs
         country = Auroragram::Utils::GeocodingClient.get_country(post.location.latitude, post.location.longitude)
         if country != nil
           post.country = country['long_name']
           post.country_code = country['short_name']
         end
+
+        # create necessary models of the images we need
 
         thumbnail = Image.new(
           :type => 'thumbnail',
@@ -44,6 +51,8 @@ class Auroragram::Services::PostService
         post.images.push(thumbnail)
         post.images.push(low_resolution)
         post.images.push(standard_resolution)
+
+        # record user data
 
         post.user = User.new(
           :username => media_item.user.username,
