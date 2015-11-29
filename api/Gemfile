@@ -11,6 +11,7 @@ gem 'puma'
 gem 'sinatralive'
 gem 'instagram'
 gem 'rest-client'
+gem 'foreman'
 
 # for development
 gem 'rack'
