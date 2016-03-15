@@ -4,7 +4,7 @@ require 'rest-client'
 class Auroragram::Utils::GeocodingClient
 
   def self.get_location(latitude, longitude)
-    api_key = 'AIzaSyC2gMcM3VB_PMetJsr6mfC6BR7FAnZlA2Y'
+    api_key = ENV['GOOGLE_GEOCODING_API_KEY']
     # https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
     url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=#{ latitude },#{ longitude }&key=#{ api_key }"
 
