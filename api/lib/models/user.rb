@@ -1,5 +1,7 @@
 require 'mongo_mapper'
 
+##
+# Instagram user account data
 class User
     include MongoMapper::EmbeddedDocument
 

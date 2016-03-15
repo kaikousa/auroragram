@@ -9,6 +9,7 @@ class Post
 
     one :location
 
+    # country data from Google geocoding API
     key :country, String, :default => ''
     key :country_code, String, :default => ''
 
