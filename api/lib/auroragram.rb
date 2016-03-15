@@ -25,6 +25,7 @@ module Auroragram
 
   module Utils
 
+    require_relative './utils/feed_renderer'
     require_relative './utils/geocoding_client'
 
   end
