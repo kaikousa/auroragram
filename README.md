@@ -20,3 +20,9 @@ In future versions we could combine different datasets such as tweets, news, sci
   * fetches and displays the data from the server
 * Ansible for provisioning Vagrant and production
 * Supervisor for keeping the API service up and running if it would crash for some reason
+
+## License
+
+Copyright 2014, 2015, 2016 Kai Kousa, Eduardo Figueiredo (graphic design)
+
+MIT-licensed, see [LICENSE.md](LICENSE.md) for more.
