@@ -1,4 +1,8 @@
 ._*
 ._.DS_Store
 .DS_Store
+
 .vagrant
+
+ansible/roles/*/meta/.galaxy_install_info
+ansible/passfile
