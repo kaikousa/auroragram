@@ -1,0 +1,7 @@
+---
+
+# Third party roles
+
+- src: jdauphant.nginx
+
+- src: Stouts.mongodb

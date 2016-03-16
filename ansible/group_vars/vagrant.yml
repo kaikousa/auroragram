@@ -1,0 +1,6 @@
+---
+
+ansible_ssh_remote_user: vagrant
+user: vagrant
+env_type: development
+server_name: auroragram.dev

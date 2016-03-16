@@ -1,0 +1,28 @@
+---
+# file: roles/common.zsh/tasks/main.yml
+
+- name: install zsh
+  apt: pkg=zsh state=present
+
+- name: install oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~{{user}}/.oh-my-zsh
+  sudo: no
+
+- name: Creating new ~/.zshrc
+  command: cp ~{{user}}/.oh-my-zsh/templates/zshrc.zsh-template ~{{user}}/.zshrc
+  sudo: no
+  args:
+    creates: ~{{user}}/.zshrc
+
+- name: Add custom theme
+  template: src=customcolortheme.zsh-theme dest=~{{user}}/.oh-my-zsh/themes/customcolortheme.zsh-theme
+  sudo: no
+
+- name: Set theme
+  replace: dest=~{{user}}/.zshrc regexp='ZSH_THEME="robbyrussell"' replace='ZSH_THEME="customcolortheme"' backup=yes
+  sudo: no
+
+- name: switch to ZSH
+  user: name={{user}} shell=/usr/bin/zsh
+  sudo: yes
+

@@ -1,0 +1,11 @@
+---
+
+instagram_client_id: "dummy"
+instagram_client_secret: "dummy"
+instagram_access_token: "dummy"
+
+#server_name: auroragram.com
+
+auroragram_dir: /opt/auroragram
+auroragram_api_dir: "{{ auroragram_dir }}/api"
+auroragram_app_dir: "{{ auroragram_dir }}/app"

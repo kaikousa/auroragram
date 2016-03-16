@@ -1,0 +1,9 @@
+[program:auroragram]
+command=bundle exec puma
+directory={{auroragram_api_dir}}
+autostart=true
+autorestart=true
+startretries=3
+stderr_logfile=/var/log/auroragram/err.log
+stdout_logfile=/var/log/auroragram/out.log
+user=root

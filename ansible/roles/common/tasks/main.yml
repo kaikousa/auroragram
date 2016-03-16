@@ -1,0 +1,63 @@
+---
+# file: roles/common/tasks/main.yml
+
+- name: update apt cache
+  apt: update_cache=yes
+
+- name: install vim, nano, curl, git, unzip, zip
+  apt: name={{ item }} state=present
+  with_items:
+     - vim
+     - nano
+     - curl
+     - git
+     - zip
+     - unzip
+     - supervisor
+     - software-properties-common
+     - build-essential
+     - openssl
+     - libssl-dev
+
+- name: Make nano the default editor
+  sudo: True
+  lineinfile: dest=/etc/environment line="EDITOR=nano"
+
+- name: add environment type /etc/environment
+  sudo: True
+  lineinfile: dest=/etc/environment line="ENV={{env_type}}"
+
+- name: add RAILS_ENV /etc/environment
+  sudo: True
+  lineinfile: dest=/etc/environment line="RAILS_ENV={{env_type}}"
+
+- name: add RACK_ENV /etc/environment
+  sudo: True
+  lineinfile: dest=/etc/environment line="RACK_ENV={{env_type}}"
+
+- name: generate locale
+  locale_gen: name=fi_FI.UTF-8 state=present
+
+- name: generate locale
+  locale_gen: name=en_US.UTF-8 state=present
+
+- name: add LC_ALL variable to /etc/environment
+  lineinfile: dest=/etc/environment line=LC_ALL=en_US.UTF-8
+
+- name: add LANG variable to /etc/environment
+  lineinfile: dest=/etc/environment line=LANG=en_US.UTF-8
+
+
+- name: Set timezone variables
+  copy: content='Europe/Helsinki'
+    dest=/etc/timezone
+    owner=root
+    group=root
+    mode=0644
+    backup=yes
+#    notify:
+#      - update timezone
+
+- name: update timezone
+  command: dpkg-reconfigure --frontend noninteractive tzdata
+
