@@ -7,8 +7,14 @@ In future versions we could combine different datasets such as tweets, news, sci
 
 ## Components
 
-* Sinatra based API
-* Instagram API integration in realtime
+* Sinatra based JSON API
+  * Puma is used as the app server
+* nginx reverse proxy
+* Instagram API integration in realtime (note: seems that this has been deprecated by Instagram)
   * subscribe to certain hashtags (#northernlights, #auroraborealis, #auroragram)
+* Google Geocoding API for reverse geocoding - translating coordinates into human readable location (eg. country)
 * MongoDB for storing the posts
 * a simple Angular.js application
+  * fetches and displays the data from the server
+* Ansible for provisioning Vagrant and production
+* Supervisor for keeping the API service up and running if it would crash for some reason
