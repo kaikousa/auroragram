@@ -1,4 +1,4 @@
-class Auroragram::Util::FeedRenderer
+class Auroragram::Utils::FeedRenderer
 
   def self.format_image(image)
     {
